@@ -1,0 +1,305 @@
+.topNavbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background-color: var(--background-site);
+  border-bottom: 1px solid var(--devider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.hamburgerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+
+.navCenter {
+  flex: 1;
+  min-width: 0;
+  max-width: 680px;
+  margin: 0 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+  margin: 0;
+}
+
+.searchInputWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-card);
+  border: 1px solid var(--devider);
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  height: 38px;
+  padding: 0 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus-within {
+    border-color: var(--accent);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.searchInput {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  &::placeholder {
+    color: var(--text-tertiary);
+    font-weight: 400;
+  }
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
+.searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 38px;
+  background-color: var(--background-sheet);
+  border: 1px solid var(--devider);
+  border-radius: 0 20px 20px 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+    color: var(--text-primary);
+  }
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  background-color: var(--background-sheet);
+  border: 1px solid var(--devider);
+  border-radius: 18px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+    border-color: rgba(204, 120, 92, 0.4);
+    color: var(--accent);
+  }
+
+  svg {
+    stroke: currentColor;
+  }
+}
+
+.iconBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+
+.notifBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: 2px solid var(--background-site);
+}
+
+.signInBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 14px;
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 18px;
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: rgba(204, 120, 92, 0.08);
+  }
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+  padding: 2px;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+@media (max-width: 900px) {
+  .navCenter {
+    margin: 0 14px;
+  }
+  .uploadLabel {
+    display: none;
+  }
+  .uploadBtn {
+    padding: 0 10px;
+    width: 36px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .topNavbar {
+    padding: 0 10px;
+    height: 52px;
+  }
+  .navLeft {
+    gap: 8px;
+  }
+  .navCenter {
+    margin: 0 8px;
+  }
+  .searchInputWrapper {
+    height: 34px;
+    padding: 0 10px;
+  }
+  .searchInput {
+    font-size: 13.5px;
+  }
+  .searchBtn {
+    width: 44px;
+    height: 34px;
+  }
+  .navRight {
+    gap: 8px;
+  }
+  .uploadBtn {
+    display: none;
+  }
+  .signInBtn {
+    height: 34px;
+    padding: 0 10px;
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signInBtn span {
+    display: none;
+  }
+  .signInBtn {
+    width: 34px;
+    padding: 0;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,93 @@
+import { Kind, settingsApp, settingsDescription } from "../constants";
+import { logError } from "./logger";
+import { signEvent } from "./nostrAPI";
+
+export const getMembershipStatus = async (pubkey: string | undefined, subId: string, socket: WebSocket) => {
+  if (!pubkey) return;
+
+  const event = {
+    kind: Kind.Settings,
+    tags: [['p', pubkey], ['d', settingsApp, settingsDescription.getMembershipStatus]],
+    created_at: Math.floor((new Date()).getTime() / 1000),
+    content: JSON.stringify({ desription: 'Get Primal memebeship status'}),
+  };
+
+  try {
+    signEvent(event, { isRead: true }).then(signedNote => {
+      const message = JSON.stringify([
+        "REQ",
+        subId,
+        {cache: ["membership_status", { event_from_user: signedNote }]},
+      ]);
+
+      if (socket) {
+        const e = new CustomEvent('send', { detail: { message, ws: socket }});
+
+        socket.send(message);
+        socket.dispatchEvent(e);
+      } else {
+        throw('no_socket');
+      }
+    }).catch(reason => {
+      logError('ENQUEUE Failed get membership status: ', reason);
+    })
+    // const signedNote = await signEvent(event);
+
+    // const message = JSON.stringify([
+    //   "REQ",
+    //   subId,
+    //   {cache: ["membership_status", { event_from_user: signedNote }]},
+    // ]);
+
+    // if (socket) {
+    //   const e = new CustomEvent('send', { detail: { message, ws: socket }});
+
+    //   socket.send(message);
+    //   socket.dispatchEvent(e);
+    // } else {
+    //   throw('no_socket');
+    // }
+
+
+    return true;
+  } catch (reason) {
+    console.error('Failed to upload: ', reason);
+    return false;
+  }
+}
+
+
+
+export const getExchangeRate = async (pubkey: string | undefined, subId: string, currency: string, socket: WebSocket) => {
+  if (!pubkey) {
+    return;
+  }
+
+  const content = JSON.stringify(
+    ["exchange_rate", { target_currency: currency }],
+  );
+
+  const event = {
+    content,
+    kind: Kind.WALLET_OPERATION,
+    created_at: Math.ceil((new Date()).getTime() / 1000),
+    tags: [],
+  };
+
+  const signedEvent = await signEvent(event, { isRead: true });
+
+  const message = JSON.stringify([
+    "REQ",
+    subId,
+    {cache: ["wallet", { operation_event: signedEvent }]},
+  ]);
+
+  if (socket) {
+    const e = new CustomEvent('send', { detail: { message, ws: socket }});
+
+    socket.send(message);
+    socket.dispatchEvent(e);
+  } else {
+    throw('no_socket');
+  }
+}

@@ -1,0 +1,44 @@
+.title {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-left: 16px;
+}
+
+.modal {
+  width: fit-content;
+  color: var(--text-secondary);
+  background-color: var(--background-input);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 16px;
+  padding-bottom: 8px;
+
+  .message {
+    width: 532px;
+
+    a {
+      display: inline;
+    }
+  }
+
+  .actions {
+    width: 532px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+      min-width: 100px;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

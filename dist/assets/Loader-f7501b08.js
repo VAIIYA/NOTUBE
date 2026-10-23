@@ -1,0 +1,2 @@
+var s=Object.defineProperty;var o=(r,e)=>s(r,"name",{value:e,configurable:!0});import{y as n,a as l,s as v,b as u,t as c}from"./index-9379590f.js";const i="_loader_dvaxu_1",_={loader:i,"loader-1":"_loader-1_dvaxu_1"};var f=c("<div><span>");const m=o(r=>(()=>{var e=f();return l(a=>{var t=r.id,d=_.loader;return t!==a.e&&v(e,"id",a.e=t),d!==a.t&&u(e,a.t=d),a},{e:void 0,t:void 0}),e})(),"Loader"),b=n(m);export{b as L};
+//# sourceMappingURL=Loader-f7501b08.js.map

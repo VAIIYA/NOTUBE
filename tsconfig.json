@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node", // or whatever works for @cookbook/solid-intl
+    "paths": {
+      "nostr-tools/nip46": ["./node_modules/nostr-tools/lib/esm/nip46.js"]
+    },
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client", "vite-plugin-pwa/client"],
+    "noEmit": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true
+  }
+}

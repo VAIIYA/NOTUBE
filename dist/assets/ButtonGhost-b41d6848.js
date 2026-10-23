@@ -1,0 +1,2 @@
+var i=Object.defineProperty;var e=(t,r)=>i(t,"name",{value:r,configurable:!0});import{y as o,c as s,en as n,eW as h}from"./index-9379590f.js";const l=e(t=>s(h,{get id(){return t.id},get class(){return`${n.ghost} ${t.highlight?n.highlight:""} ${t.class||""}`},get onClick(){return t.onClick},get disabled(){return t.disabled},get children(){return t.children}}),"ButtonGhost"),g=o(l);export{g as B};
+//# sourceMappingURL=ButtonGhost-b41d6848.js.map

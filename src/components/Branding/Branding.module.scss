@@ -1,0 +1,71 @@
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .playIcon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .playIcon {
+    transform: scale(1.05);
+  }
+
+  .brandText {
+    font-family: 'Lora', 'STIX Two Text', Georgia, serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    .brandNo {
+      color: var(--text-primary);
+    }
+
+    .brandTube {
+      color: var(--accent);
+      margin-left: 1px;
+    }
+  }
+}
+
+.brandingSmall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .playIcon {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .playIcon {
+    transform: scale(1.08);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .branding {
+    .brandText {
+      display: none;
+    }
+  }
+}
+
+.logoLink {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  margin: 0px;
+  padding: 6px 8px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+

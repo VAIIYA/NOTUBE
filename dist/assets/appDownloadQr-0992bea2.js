@@ -1,0 +1,2 @@
+var r=Object.defineProperty;var o=(a,n)=>r(a,"name",{value:n,configurable:!0});import{o as t,b4 as e,aE as i,dO as p,aF as s}from"./index-9379590f.js";const c=o(()=>(t(()=>{if(e()){window.location.replace(i);return}if(p()){window.location.replace(s);return}window.location.replace("https://primal.net/home")}),[]),"AppDownloadQr");export{c as default};
+//# sourceMappingURL=appDownloadQr-0992bea2.js.map

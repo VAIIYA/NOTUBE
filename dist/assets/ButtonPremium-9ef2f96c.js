@@ -1,0 +1,2 @@
+var o=Object.defineProperty;var t=(e,n)=>o(e,"name",{value:n,configurable:!0});import{y as i,c as u,en as r,eo as s}from"./index-9379590f.js";const a=t(e=>u(s.Root,{get id(){return e.id},get class(){return`${r.premium} ${e.pro?r.proVersion:""}`},get onClick(){return e.onClick},get disabled(){return e.disabled},get type(){return e.type},get children(){return e.children}}),"ButtonPremium"),d=i(a);export{d as B};
+//# sourceMappingURL=ButtonPremium-9ef2f96c.js.map

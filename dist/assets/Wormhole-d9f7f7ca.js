@@ -1,0 +1,2 @@
+var u=Object.defineProperty;var n=(e,t)=>u(e,"name",{value:t,configurable:!0});import{k as a,o as s,c as r,gB as c,S as m}from"./index-9379590f.js";const g=n(e=>{const[t,o]=a(!1);return s(()=>{setTimeout(()=>{o(!0)})}),r(m,{get when(){return t()},get children(){return r(c,{get mount(){return document.getElementById(e.to)},get children(){return e.children}})}})},"Wormhole");export{g as W};
+//# sourceMappingURL=Wormhole-d9f7f7ca.js.map
